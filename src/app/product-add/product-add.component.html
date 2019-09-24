@@ -1,1 +1,46 @@
-<p>product-add works!</p>
+<div class="card">
+    <div class="card-body">
+      <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+          <label class="col-md-4">Product Name</label>
+          <input type="text" class="form-control" 
+            formControlName="ProductName" 
+            #ProductName />
+        </div>
+        <div *ngIf="angForm.controls['ProductName'].invalid && (angForm.controls['ProductName'].dirty || angForm.controls['ProductName'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['ProductName'].errors.required">
+            Product Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Product Model</label>
+          <input type="text" class="form-control" 
+            formControlName="ProductModel" 
+            #ProductModel
+          />
+        </div>
+        <div *ngIf="angForm.controls['ProductModel'].invalid && (angForm.controls['ProductModel'].dirty || angForm.controls['ProductModel'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['ProductModel'].errors.required">
+            Product Model is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Product Description </label>
+          <textarea class="form-control" rows = 7 cols = "5"
+          formControlName="ProductDescription" 
+          #ProductDescription></textarea>
+        </div>
+        <div *ngIf="angForm.controls['ProductDescription'].invalid && (angForm.controls['ProductDescription'].dirty || angForm.controls['ProductDescription'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['ProductDescription'].errors.required">
+            Product Description is required.
+          </div>
+        </div>
+        <div class="form-group">
+            <button (click) = "addProduct(ProductName.value, ProductModel.value, ProductDescription.value)" type="submit" class="btn btn-primary"
+            [disabled]="angForm.pristine || angForm.invalid" >
+              Create Product
+            </button>
+        </div>
+      </form>
+    </div>
+  </div>
