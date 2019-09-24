@@ -9,12 +9,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductService } from './product.service';
+import { DevicesOnlineComponent } from './devices-online/devices-online.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductAddComponent,
-    ProductListComponent
+    ProductListComponent,
+    DevicesOnlineComponent
   ],
   imports: [
     BrowserModule,
