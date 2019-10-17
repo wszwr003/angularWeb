@@ -18,18 +18,30 @@ export class ProductService {
     };
     console.log(obj);
     this.http.post(`${this.uri}/add`, obj)
-        .subscribe(res => console.log('Done'));
+      .subscribe(res => console.log('Done'));
   }
 
   getProducts() {
     return this
-           .http
-           .get(`${this.uri}/list`);
+      .http
+      .get(`${this.uri}/list`);
   }
 
-  deleteProduct(id) {
-    return this
-              .http
-              .get(`${this.uri}/delete/${id}`);
+  deleteProduct(ProductName) {  // TOSOLVE:删除后需要手动刷新。
+    const obj = {
+      ProductName
+    };
+    this.http.post(`${this.uri}/delete`, obj)
+      .subscribe(res => {
+      });
+  }
+
+  updateProduct(ProductName) {
+    const obj = {
+      ProductName
+    };
+    this.http.post(`${this.uri}/update`, obj)
+      .subscribe(res => {
+      });
   }
 }

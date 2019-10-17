@@ -19,9 +19,7 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  deleteProduct(id) {
-    this.ps.deleteProduct(id).subscribe(res => {
-      this.products.splice(id, 1);
-    });
+  deleteProduct(product_name) {
+    this.ps.deleteProduct(product_name);
   }
 }
