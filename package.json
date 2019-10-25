@@ -1,11 +1,17 @@
 {
-  "name": "angular_web",
+  "name": "angular-web",
   "version": "1.0.0",
   "scripts": {
+    "version": "1.0.0",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "restart": "ng restart",
+    "stop": "ng stop",
     "test": "ng test",
+    "build": "ng build --prod",
+    "imagebuild": "docker image build -t wszwr003/angular-web:0.1 .", 
+    "imagestart": "docker run -p 4200:80 --rm wszwr003/angular-web:0.1", 
+    "imagepush": "docker push wszwr003/angular-web:0.1", 
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
