@@ -4,7 +4,7 @@
   "scripts": {
     "version": "1.0.0",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "restart": "ng restart",
     "stop": "ng stop",
     "test": "ng test",
